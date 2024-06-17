@@ -1,0 +1,21 @@
+
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+C
+serenity.properties,2\5\25f1bbdc8dba7ca4a4b90251f1ef69621b24a28c
+\
+,src/test/java/booking/Test1_CreateToken.java,2\e\2e4a4ecb5f8390aa25d7570c2506ab1dd4570b2c
+b
+2src/test/java/booking/Test3_UpdateBookingTest.java,1\4\14f0f31094a4482d685dc631bbc0d8ac5dc6698f
+Z
+*src/main/java/tasks/CreateBookingTask.java,2\6\26e06e804b81f1ce5505ac71f21d68da057fc221
+[
++src/main/java/tasks/CreateTokenBooking.java,b\9\b949adff13ed4d2a063291aa35190260f9755fc9
+[
++src/main/java/tasks/UpdateBookingTasks.java,e\f\efd76653038a56de792f5137469d1688eec0d40a
+b
+2src/test/java/booking/Test2_CreateBookingTest.java,b\5\b5ed586da361994588c2982341315c6890ca9742
+P
+ src/test/java/booking/Utils.java,f\7\f7ef10dbe7505fff261ed5d0d5c645e164a926b8
+T
+$src/test/java/booking/TestSuite.java,2\c\2c47243c2c3feed4b9dd6b43df16611ee30f8087
