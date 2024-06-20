@@ -8,20 +8,26 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 import net.thucydides.junit.annotations.UseTestDataFrom;
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.jupiter.api.*;
 import org.junit.runner.RunWith;
 import models.booking.BookingDates;
 import models.booking.CreateBookingData;
+import org.junit.runners.MethodSorters;
 import questions.ResponseCode;
 import tasks.CreateBookingTask;
+import tasks.DeleteBookingTasks;
 import tasks.GetBookingTask;
 import tasks.UpdateBookingTasks;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.Matchers.equalTo;
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom(value = "src/test/resources/createBooking.csv")
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Test2_CreateBookingTest {
 
     private static final String baseUrl = "https://restful-booker.herokuapp.com/";
@@ -38,7 +44,7 @@ public class Test2_CreateBookingTest {
 
 
     @Test
-    public void test2_createBooking(){
+    public void test1_createBooking(){
 
         bookingData.setFirstname(firstname);
         bookingData.setLastname(lastname);
@@ -72,7 +78,7 @@ public class Test2_CreateBookingTest {
     }
 
     @Test
-    public void test3_getBooking(){
+    public void test2_getBooking(){
         Actor user = Actor.named("user")
                 .whoCan(CallAnApi.at(baseUrl));
 
@@ -88,6 +94,21 @@ public class Test2_CreateBookingTest {
         js = new JsonPath(responseGet);
         String nameGet = js.get("firstname");
         Assert.assertEquals(nameGet, bookingData.getFirstname());
+    }
+
+    @Test
+    @Order(3)
+    public void test3_deleteBooking(){
+        Actor user = Actor.named("user")
+                .whoCan(CallAnApi.at(baseUrl));
+
+        user.attemptsTo(
+                DeleteBookingTasks.deleteBooking(Utils.getBookingId(), "cab3051439dd80e")
+        );
+
+        user.should(
+                seeThat("El codigo de respuesta", ResponseCode.was(), equalTo(201))
+        );
     }
 
 
