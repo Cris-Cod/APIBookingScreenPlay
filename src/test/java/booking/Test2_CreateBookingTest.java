@@ -103,7 +103,7 @@ public class Test2_CreateBookingTest {
                 .whoCan(CallAnApi.at(baseUrl));
 
         user.attemptsTo(
-                DeleteBookingTasks.deleteBooking(Utils.getBookingId(), "cab3051439dd80e")
+                DeleteBookingTasks.deleteBooking(Utils.getBookingId(), Utils.getToken())
         );
 
         user.should(
