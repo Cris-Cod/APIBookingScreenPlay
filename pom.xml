@@ -117,10 +117,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                    </includes>
-                    <skip>false</skip>
+                    <runOrder>alphabetical</runOrder>
                 </configuration>
             </plugin>
             <plugin>
@@ -128,12 +125,7 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                    </includes>
-                    <excludes>
-                        <exclude>**/*WithFailures.java</exclude>
-                    </excludes>
+                    <runOrder>alphabetical</runOrder>
                 </configuration>
                 <executions>
                     <execution>

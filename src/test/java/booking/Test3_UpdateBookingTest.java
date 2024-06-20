@@ -40,12 +40,12 @@ public class Test3_UpdateBookingTest {
 
 
     @Test
-    public void test3_updateBooking() {
+    public void test4_UpdateBooking() {
 
 
 
         id = Utils.getBookingId();
-        token = test1CreateToken.token;
+        token = Utils.getToken();
         updateData.setFirstname(firstname);
         updateData.setLastname(lastaname);
         updateData.setTotalprice(totalprice);
@@ -62,7 +62,7 @@ public class Test3_UpdateBookingTest {
                 .whoCan(CallAnApi.at(baseUrl));
 
         user.attemptsTo(
-                UpdateBookingTasks.update(updateData, "6d5989b2248c3f3", id)
+                UpdateBookingTasks.update(updateData, token, id)
         );
 
         user.should(

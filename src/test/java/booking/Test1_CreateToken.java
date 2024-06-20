@@ -19,12 +19,11 @@ import static org.hamcrest.Matchers.equalTo;
 public class Test1_CreateToken {
 
     private static final String baseUrl = "https://restful-booker.herokuapp.com/";
-    public static String token;
 
 
 
     @Test
-    public void createTokenTest(){
+    public void test1_createTokenTest(){
 
         Actor user = Actor.named("user")
                 .whoCan(CallAnApi.at(baseUrl));
@@ -43,7 +42,8 @@ public class Test1_CreateToken {
         );
         String response = SerenityRest.lastResponse().asString();
         JsonPath js = new JsonPath(response);
-        token = js.get("token");
-        System.out.println(token);
+        String token = js.get("token");
+        Utils.setToken(token);
+        System.out.println(Utils.getToken());
     }
 }

@@ -38,7 +38,7 @@ public class Test2_CreateBookingTest {
 
 
     @Test
-    public void test1_CreateBooking(){
+    public void test2_createBooking(){
 
         bookingData.setFirstname(firstname);
         bookingData.setLastname(lastname);
@@ -72,7 +72,7 @@ public class Test2_CreateBookingTest {
     }
 
     @Test
-    public void test2_getBooking(){
+    public void test3_getBooking(){
         Actor user = Actor.named("user")
                 .whoCan(CallAnApi.at(baseUrl));
 
