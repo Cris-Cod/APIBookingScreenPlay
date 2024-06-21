@@ -97,7 +97,6 @@ public class Test2_CreateBookingTest {
     }
 
     @Test
-    @Order(3)
     public void test3_deleteBooking(){
         Actor user = Actor.named("user")
                 .whoCan(CallAnApi.at(baseUrl));
