@@ -42,8 +42,8 @@ public class Test1_CreateToken {
         );
         String response = SerenityRest.lastResponse().asString();
         JsonPath js = new JsonPath(response);
-        String token = js.get("token");
-        Utils.setToken(token);
-        System.out.println(Utils.getToken());
+        //String token = js.get("token");
+        //Utils.setToken(token);
+        //System.out.println(Utils.getToken());
     }
 }

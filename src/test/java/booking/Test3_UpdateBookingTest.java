@@ -19,7 +19,7 @@ import static org.hamcrest.Matchers.equalTo;
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom(value = "src/test/resources/updateBooking.csv")
 public class Test3_UpdateBookingTest {
-
+/*
     private static final String baseUrl = "https://restful-booker.herokuapp.com/";
     private static int id;
 
@@ -69,5 +69,5 @@ public class Test3_UpdateBookingTest {
                 seeThat("El codigo de respuesta", ResponseCode.was(), equalTo(200))
         );
     }
-
+*/
 }

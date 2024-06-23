@@ -9,6 +9,8 @@ public class CreateBookingData {
     private BookingDates bookingdates;
     private String additionalneeds;
 
+
+
     public String getFirstname() {
         return firstname;
     }
